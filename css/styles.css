@@ -1,0 +1,95 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #eaeaea;
+}
+
+/* Container */
+#container {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+/* Scene 3D */
+#scene-container {
+    flex-grow: 1;
+    background: #ccc;
+    position: relative;
+}
+
+/* Toolbar (Overlay Menu) */
+#toolbar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+.toolbar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.toolbar-group h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+select, input[type="color"], button {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: white;
+    color: black;
+}
+
+/* Texture Bar */
+.texture-bar {
+    display: flex;
+    gap: 5px;
+}
+
+.texture-bar img, .furniture-list img {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.texture-bar img:hover, .furniture-list img:hover {
+    border: 2px solid #007bff;
+    transform: scale(1.1);
+}
+
+button.danger {
+    background: red;
+}
+
+button.danger:hover {
+    background: white;
+    color: red;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Furniture Planner</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/TransformControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+    <div id="container">
+        <main id="scene-container"></main>
+
+        <!-- Overlay Toolbar -->
+        <div id="toolbar">
+            <div class="toolbar-group">
+                <h3>Ruangan</h3>
+                <select id="roomSelector" onchange="createRoom()">
+                    <option value="livingroom">Ruang Tamu</option>
+                    <option value="bedroom">Kamar</option>
+                </select>
+            </div>
+
+            <div class="toolbar-group">
+                <h3>Warna Dinding</h3>
+                <input type="color" id="roomColor" onchange="changeRoomColor()">
+            </div>
+
+            <div class="toolbar-group">
+                <h3>Motif Lantai</h3>
+                <div class="texture-bar">
+                    <img src="textures/wood.jpg" onclick="changeTexture('textures/wood.jpg')" alt="Kayu">
+                    <img src="textures/marble.jpg" onclick="changeTexture('textures/marble.jpg')" alt="Marmer">
+                </div>
+            </div>
+
+            <div class="toolbar-group">
+                <h3>Pilih Furniture</h3>
+                <div class="furniture-list">
+                    <img src="thumbnails/sofa.jpg" onclick="addFurniture('sofa')" alt="Sofa">
+                    <img src="thumbnails/table.jpg" onclick="addFurniture('table')" alt="Meja">
+                    <img src="thumbnails/chair.jpg" onclick="addFurniture('chair')" alt="Kursi">
+                </div>
+            </div>
+
+            <div class="toolbar-group">
+                <h3>Transformasi</h3>
+                <button onclick="setTransformMode('translate')">Pindah</button>
+                <button onclick="setTransformMode('rotate')">Rotasi</button>
+                <button onclick="setTransformMode('scale')">Skala</button>
+                <button class="danger" onclick="removeSelectedFurniture()">Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
